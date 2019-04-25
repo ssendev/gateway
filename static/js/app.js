@@ -399,6 +399,7 @@ require('./components/capability/color-control');
 require('./components/capability/custom');
 require('./components/capability/door-sensor');
 require('./components/capability/energy-monitor');
+require('./components/capability/hide-things');
 require('./components/capability/label');
 require('./components/capability/leak-sensor');
 require('./components/capability/light');

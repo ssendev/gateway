@@ -17,6 +17,10 @@
   opacity: 1;
 }
 
+.thing.off ~ .thing {
+  display: none;
+}
+
 .thing-ui-link {
   box-sizing: border-box;
   display: block;

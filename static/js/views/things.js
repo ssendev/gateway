@@ -21,6 +21,7 @@ const ColorControl = require('../schema-impl/capability/color-control');
 const Constants = require('../constants');
 const DoorSensor = require('../schema-impl/capability/door-sensor');
 const EnergyMonitor = require('../schema-impl/capability/energy-monitor');
+const HideThings = require('../schema-impl/capability/hide-things');
 const EventList = require('./event-list');
 const Icons = require('../icons');
 const LeakSensor = require('../schema-impl/capability/leak-sensor');
@@ -67,6 +68,9 @@ const ThingsScreen = {
     let thing;
     if (description.selectedCapability) {
       switch (description.selectedCapability) {
+        case 'OnOffSwitch':
+          thing = new HideThings(thingModel, description, format);
+          break;
         case 'OnOffSwitch':
           thing = new OnOffSwitch(thingModel, description, format);
           break;
@@ -121,6 +125,9 @@ const ThingsScreen = {
       }
     } else {
       switch (description.type) {
+        case 'onOffSwitch':
+          thing = new HideThings(thingModel, description, format);
+          break;
         case 'onOffSwitch':
           thing = new OnOffSwitch(thingModel, description, format);
           break;
